@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://snrvq7jkapgf"]
+
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_36epf"]
+[ext_resource type="Texture2D" uid="uid://c57fej47adq38" path="res://assets/restart.png" id="2_e5ng7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5q2wo"]
+texture = ExtResource("2_e5ng7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tftqu"]
+texture = ExtResource("2_e5ng7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8hnhm"]
+texture = ExtResource("2_e5ng7")
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_36epf")
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 342.0
+offset_top = 350.0
+offset_right = 502.0
+offset_bottom = 413.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5q2wo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tftqu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8hnhm")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
